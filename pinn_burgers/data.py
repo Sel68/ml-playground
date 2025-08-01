@@ -27,6 +27,3 @@ def get_training_data(N0 = 100, Nb = 100, Nf = 10000):
     return torch.tensor(X_u, dtype=torch.float32).to(device), \
            torch.tensor(u, dtype=torch.float32).to(device), \
            torch.tensor(X_f, dtype=torch.float32).to(device)
-
-
-get_training_data()
