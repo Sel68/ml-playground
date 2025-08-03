@@ -6,7 +6,6 @@ def gradients(u, x, order=1):
         u = torch.autograd.grad(u, x, 
                                 grad_outputs=torch.ones_like(u), 
                                 create_graph=True, retain_graph=True)[0]
-    
     return u
 
 def trainPinn(model, X_u, u, X_f, nu, epochs=5000, lamb=1.0):
@@ -15,7 +14,7 @@ def trainPinn(model, X_u, u, X_f, nu, epochs=5000, lamb=1.0):
 
     X_u.requires_grad_()
 
-    for iter in range(epochs):
+    for _ in range(epochs):
         optimizer.zero_grad()
 
         # Supervised loss (boundary + initial)

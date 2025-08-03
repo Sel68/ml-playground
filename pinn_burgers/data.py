@@ -5,10 +5,12 @@ from scipy.stats import qmc
 def get_training_data(N0 = 100, Nb = 100, Nf = 10000):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+    #Initial Conds
     x0 = np.random.uniform(-1, 1, (N0, 1))
     t0 = np.zeros_like(x0)
     u0 = -np.sin(np.pi * x0)
 
+    #Boundary Conds
     tb = np.random.uniform(0, 1, (Nb, 1))
     xb1 = -np.ones_like(tb)
     xb2 = np.ones_like(tb)

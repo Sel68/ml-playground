@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     W, b, y_pred, loss = n_layer_nn(X_np, u_np, N=4, lr=0.01, epochs=10000, hidden_size=20)
     print(f"Loss with backprop with X_u and u: {loss:.5e}\n")
-
+    
     l2 = trainPinn(model, X_u_train, u_train, X_f_train, nu=0.01 / torch.pi, epochs=10000)
     print(f"Loss with PINN: {l2.item():.5e}")
 
